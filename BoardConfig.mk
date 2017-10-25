@@ -35,7 +35,8 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_FEATURES := div,atomic_ldrd_strd,armv8a
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := potter,potter_retail
@@ -57,6 +58,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := potter_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-androideabi-7.2/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
@@ -115,6 +118,10 @@ BOARD_USES_QCNE := true
 
 # CPUsets
 ENABLE_CPUSETS := true
+
+# CLANG
+CLANG_FAST := true
+TARGET_USE_SDCLANG := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -176,6 +183,8 @@ LZMA_RAMDISK_TARGETS := recovery
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+
+PROTOBUF_SUPPORTED := true
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
