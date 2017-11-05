@@ -279,4 +279,12 @@
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
+    <string-array name="config_deviceKeyHandlerLibs">
+        <item>/system/priv-app/LineageActions/LineageActions.apk</item>
+    </string-array>
+
+    <string-array name="config_deviceKeyHandlerClasses">
+        <item>org.lineageos.settings.device.KeyHandler</item>
+    </string-array>
+
 </resources>

@@ -66,7 +66,8 @@ import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 
-import org.lineageos.settings.device.util.FileUtils;
+import lineageos.providers.LineageSettings;
+import org.lineageos.internal.util.FileUtils;
 
 import java.util.List;
 
@@ -598,6 +599,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 if (!mKeyguardManager.inKeyguardRestrictedInputMode()) {
                     goToPipMode();
                 }
+                break;
             case ACTION_LAST_APP:
                 if (!mKeyguardManager.inKeyguardRestrictedInputMode()) {
                     switchToLastApp(mContext);
@@ -807,7 +809,7 @@ public class KeyHandler implements DeviceKeyHandler {
         if (haptic && (action == ACTION_CAMERA || action == ACTION_FLASHLIGHT)) {
             vibrate(action == ACTION_CAMERA ? 500 : 250);
         }
-        if (haptic && action == ACTION_POWER) {
+        if (haptic && action == ACTION_POWER){
             doHapticFeedbackScreenOff();
         }
         switch (action) {
