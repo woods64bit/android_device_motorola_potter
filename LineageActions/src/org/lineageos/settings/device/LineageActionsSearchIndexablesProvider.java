@@ -33,7 +33,7 @@ import static android.provider.SearchIndexablesContract.INDEXABLES_RAW_COLUMNS;
 import static android.provider.SearchIndexablesContract.INDEXABLES_XML_RES_COLUMNS;
 import static android.provider.SearchIndexablesContract.NON_INDEXABLES_KEYS_COLUMNS;
 
-public class MotoActionsSearchIndexablesProvider extends SearchIndexablesProvider {
+public class LineageActionsSearchIndexablesProvider extends SearchIndexablesProvider {
     private static final String TAG = "LineageActionsSearchIndexablesProvider";
 
     @Override
@@ -64,10 +64,10 @@ public class MotoActionsSearchIndexablesProvider extends SearchIndexablesProvide
                     R.drawable.ic_settings_screen_off_gestures)));
 
         cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.doze_panel,
-                    DozeSettings.class.getName(),
+                    DozeSettingsFragment.class.getName(),
                     R.drawable.ic_settings_doze)));
         cursor.addRow(generateResourceRef(new SearchIndexableResource(1, R.xml.doze_panel_indexable,
-                    DozeSettings.class.getName(),
+                    DozeSettingsFragment.class.getName(),
                     R.drawable.ic_settings_doze)));
 
         return cursor;

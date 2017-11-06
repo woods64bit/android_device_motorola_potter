@@ -24,8 +24,6 @@
         android:icon="@drawable/ic_gesture"
         android:persistent="true">
 
-        <receiver android:name="org.lineageos.settings.device.BootCompletedReceiver">
-
         <provider
             android:name=".LineageActionsSearchIndexablesProvider"
             android:authorities="org.lineageos.settings.device"
