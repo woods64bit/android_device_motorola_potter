@@ -34,8 +34,10 @@ include $(BUILD_SHARED_LIBRARY)
 
 # IMS
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := MediaBuffer.c
-LOCAL_SHARED_LIBRARIES := libstagefright_foundation
+LOCAL_SRC_FILES := MediaBuffer.cpp
+LOCAL_SHARED_LIBRARIES := libui libgui libstagefright_foundation
+LOCAL_C_INCLUDES += framework/native/include frameworks/av/include
+LOCAL_CFLAGS += -Wno-unused-private-field
 LOCAL_MODULE := libshim_ims
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
