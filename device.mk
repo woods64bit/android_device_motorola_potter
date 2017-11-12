@@ -302,6 +302,7 @@ PRODUCT_PACKAGES += \
     init.mmi.usb.rc \
     init.oem.hw.sh \
     init.qcom.rc \
+    init.safailnet.rc \
     ueventd.qcom.rc
 
 # Releasetools script
