@@ -20,10 +20,7 @@ DEVICE_PATH := device/motorola/potter
 
 BOARD_VENDOR := motorola-qcom
 
-# AIDs and CAPS
-TARGET_FS_CONFIG_GEN := \
-    $(DEVICE_PATH)/fs_config/mot_aids.txt \
-    $(DEVICE_PATH)/fs_config/file_caps.txt
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
